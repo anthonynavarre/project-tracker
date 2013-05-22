@@ -1,4 +1,4 @@
-[![Code Climate](https://codeclimate.com/github/pedrosmmoreira/project-tracker.png)](https://codeclimate.com/github/pedrosmmoreira/project-tracker)
+{<img src="https://codeclimate.com/github/pedrosmmoreira/project-tracker.png" />}[https://codeclimate.com/github/pedrosmmoreira/project-tracker]
 
 == ProjectTracker
 
