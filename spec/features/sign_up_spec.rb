@@ -9,6 +9,7 @@ feature 'A visitor can sign up' do
     fill_in 'Password', with: 'example'
     click_button 'Sign up'
 
+    expect(page).to have_css 'h2', text: 'Dashboard'
     expect(page).to have_css 'p.greeting', text: 'Welcome, user@example.com'
   end
 end
