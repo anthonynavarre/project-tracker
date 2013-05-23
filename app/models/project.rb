@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
   attr_accessible :name, :owner_id
 
-  has_many :users
+  has_many :collaborators, class_name: 'User'
   belongs_to :owner, class_name: 'User'
 
   def self.create_with_owner(project_params, user)
