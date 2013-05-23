@@ -7,6 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <h1>ProjectTracker</h1>
+
+    <nav>
+    <% if signed_in? -%>
+    <p class="greeting">Welcome, <%= current_user.email %></p>
+    <ul>
+      <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+    </ul>
+    <% end -%>
+    </nav>
+  </header>
 <% flash.each do |key, value| -%>
   <div class="flash <%= key %>"><%= value %></div>
 <% end -%>
