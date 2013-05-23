@@ -3,6 +3,8 @@ ProjectTracker::Application.routes.draw do
 
   resource :dashboard, only: [:show]
 
+  resources :projects, only: [:new, :create]
+
   resource :session,
     controller: 'sessions',
     only: [:create, :new, :destroy]

@@ -1,2 +1,17 @@
 <h2>Dashboard</h2>
 <p class="greeting">Welcome, <%= current_user.email %></p>
+
+
+<section>
+  <h1>Projects</h1>
+  <%= link_to 'Create a new project', new_project_path %>
+
+  <ul>
+  <% @projects.each do |project| -%>
+    <li>
+      <h2><%= project.name %></h2>
+      <p data-role="project-owner"><%= project.owner.email %></p>
+    </li>
+  <% end -%>
+  </ul>
+</section>
