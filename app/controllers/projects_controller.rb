@@ -4,10 +4,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project])
-    @project.owner = current_user
-    @project.save
-    flash[:notice] = "Project #{@project.name} created sucessfuly"
+    project = Project.create_with_owner(params[:project], current_user)
+    flash[:success] = "Project #{project.name} created sucessfuly"
     redirect_to dashboard_path
   end
 end
