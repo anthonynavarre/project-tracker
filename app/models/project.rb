@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
     project.save
     project
   end
-
+  
   def set_owner(project, user)
     project.owner = user
   end
