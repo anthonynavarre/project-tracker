@@ -1,12 +1,16 @@
 require 'spec_helper'
 
-describe Project, "#create_with_owner" do
-  it 'creates a project and sets the owner to the user passed in' do
-    user = create(:user)
-    project_params = attributes_for(:project)
+describe Project do
 
-    project = Project.create_with_owner(project_params, user)
+  describe ".create_with_owner" do
+    it 'creates a project and sets the owner to the user passed in' do
+      user = create(:user)
+      project_params = attributes_for(:project)
 
-    expect(project.owner.email).to eq user.email
+      project = Project.create_with_owner(project_params, user)
+
+      expect(project.owner.email).to eq user.email
+    end
   end
+
 end
