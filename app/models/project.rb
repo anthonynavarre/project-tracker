@@ -6,12 +6,8 @@ class Project < ActiveRecord::Base
 
   def self.create_with_owner(project_params, user)
     project = Project.new(project_params)
-    project.set_owner project, user
+    project.owner = user
     project.save
     project
-  end
-  
-  def set_owner(project, user)
-    project.owner = user
   end
 end
